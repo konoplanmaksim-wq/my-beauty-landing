@@ -13,7 +13,7 @@ import WorkflowSection from "@/components/landing/WorkflowSection";
 import FAQSection from "@/components/landing/FAQSection";
 import InefficiencySection from "@/components/landing/InefficiencySection";
 import Footer from "@/components/landing/Footer";
-import ExitIntentPopup from "@/components/landing/ExitIntentPopup";
+
 import FloatingWidgets from "@/components/landing/FloatingWidgets";
 
 const WEBHOOK_URL = "https://hook.eu1.make.com/nz434sx17u2q5mxet3ofqg8y7pzxm1ht";
@@ -105,7 +105,7 @@ const Index = () => {
         <FAQSection />
         <Footer />
       </main>
-      <ExitIntentPopup />
+
       <FloatingWidgets isOpen={isCallbackOpen} onOpenChange={setIsCallbackOpen} />
 
       {clickFormOpen && (
