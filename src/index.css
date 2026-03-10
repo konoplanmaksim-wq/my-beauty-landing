@@ -114,6 +114,9 @@
   .text-balance {
     text-wrap: balance;
   }
+  @supports (padding: env(safe-area-inset-top)) {
+    .safe-area-top { padding-top: env(safe-area-inset-top); }
+  }
 }
 
 @keyframes pulse-slow {
