@@ -9,11 +9,11 @@ import { LineChart, Line, XAxis, ResponsiveContainer, Tooltip } from "recharts";
 const WEBHOOK_URL = "https://hook.eu1.make.com/nz434sx17u2q5mxet3ofqg8y7pzxm1ht";
 
 const chartData = [
-  { month: "Лют", leads: 320 },
-  { month: "Бер", leads: 480 },
-  { month: "Кві", leads: 620 },
-  { month: "Тра", leads: 850 },
-  { month: "Чер", leads: 1245 },
+  { month: "Лют", leads: 5 },
+  { month: "Бер", leads: 12 },
+  { month: "Кві", leads: 22 },
+  { month: "Тра", leads: 35 },
+  { month: "Чер", leads: 45 },
 ];
 
 const stats = [
@@ -119,6 +119,7 @@ const HeroSection = () => {
                         fontSize: 13,
                       }}
                       labelStyle={{ color: "hsl(var(--foreground))" }}
+                      formatter={(value: number) => `+${value}%`}
                     />
                     <Line
                       type="monotone"

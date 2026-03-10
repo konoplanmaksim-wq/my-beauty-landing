@@ -50,7 +50,7 @@ const Header = () => {
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
         <div className="container mx-auto px-4 py-3 flex items-center justify-between">
           <div>
-            <span className="font-extrabold text-xl text-foreground tracking-tight">TARGET GROUP</span>
+            <span className="font-extrabold text-xl text-foreground tracking-tight">META MONSTER</span>
             <p className="text-xs text-muted-foreground">Агенція Meta таргета</p>
           </div>
 
