@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { X } from "lucide-react";
+import { X, Phone, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
@@ -145,12 +145,17 @@ const HeroSection = () => {
               <X className="w-5 h-5" />
             </button>
 
-            <h3 className="text-xl font-bold text-foreground text-center mb-2">
-              Залиште ваші контакти
-            </h3>
-            <p className="text-sm text-muted-foreground text-center mb-6">
-              Менеджер зв'яжеться з вами найближчим часом
-            </p>
+            <div className="text-center mb-6">
+              <div className="inline-flex items-center justify-center w-14 h-14 bg-primary/10 rounded-full mb-4">
+                <Phone className="w-7 h-7 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-2">
+                Залиште ваші контакти
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                Менеджер зв'яжеться з вами найближчим часом
+              </p>
+            </div>
 
             <form id="form_hero" onPointerDownCapture={() => (window as any).__pushFormStartOnce?.("form_hero")} className="space-y-4">
               <Input
@@ -173,8 +178,9 @@ const HeroSection = () => {
 
               <Button
                 onClick={handleSubmit}
-                className="w-full h-12 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-xl transition-all duration-300"
+                className="w-full h-12 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-xl transition-all duration-300 gap-2"
               >
+                <Send className="w-4 h-4" />
                 Відправити
               </Button>
             </form>
