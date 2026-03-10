@@ -74,7 +74,10 @@ const PricingSection = ({ onOpenCallback }: PricingSectionProps) => {
             {plans.map((plan) => (
               <div
                 key={plan.name}
-                className={`relative rounded-2xl p-6 lg:p-8 md:pt-48 transition-all duration-300 hover:scale-105 ${
+                role="button"
+                tabIndex={0}
+                onClick={() => { (window as any).__pushDL?.("form_open", { source: "pricing_card", plan: plan.name, form_id: "form_global" }); onOpenCallback?.(); }}
+                className={`relative rounded-2xl p-6 lg:p-8 md:pt-48 transition-all duration-300 hover:scale-105 cursor-pointer ${
                   plan.highlighted
                     ? "pt-16 bg-primary text-primary-foreground shadow-2xl ring-4 ring-primary/20 md:-mt-6 md:pb-10"
                     : "pt-24 bg-card border border-border shadow-lg"
@@ -82,7 +85,7 @@ const PricingSection = ({ onOpenCallback }: PricingSectionProps) => {
               >
                 <div className="flex flex-col items-center mb-6">
                   <div className="w-28 h-28 md:w-32 md:h-32 absolute -top-12 md:-top-24 left-1/2 -translate-x-1/2 pointer-events-none z-10">
-                    <img src={plan.icon} alt="" className="w-full h-full object-contain drop-shadow-2xl" />
+                    <img src={plan.icon} alt="" className="w-full h-full object-contain" />
                   </div>
                   <h3 className="text-2xl md:text-3xl font-extrabold text-center">{plan.name}</h3>
                 </div>
