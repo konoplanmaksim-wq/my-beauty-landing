@@ -37,7 +37,8 @@ const HeroSection = () => {
     setPhone(value.slice(0, 13));
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
     if (!/^\+380\d{9}$/.test(phone)) {
       (window as any).__pushDL?.("form_error", { form_id: "form_hero", field: "phone" });
       setPhoneError("Введіть коректний номер: +380XXXXXXXXX");
@@ -59,6 +60,7 @@ const HeroSection = () => {
     setName("");
     setPhone("+380");
     navigate("/thank-you");
+    if (/Telegram/i.test(navigator.userAgent)) { window.location.assign("/thank-you"); }
   };
 
   return (
@@ -157,7 +159,7 @@ const HeroSection = () => {
               </p>
             </div>
 
-            <form id="form_hero" onPointerDownCapture={() => (window as any).__pushFormStartOnce?.("form_hero")} className="space-y-4">
+            <form id="form_hero" onPointerDownCapture={() => (window as any).__pushFormStartOnce?.("form_hero")} onSubmit={handleSubmit} className="space-y-4">
               <Input
                 id="input_name_hero"
                 placeholder="Ваше ім'я"
@@ -177,7 +179,7 @@ const HeroSection = () => {
               {phoneError && <p className="text-destructive text-sm">{phoneError}</p>}
 
               <Button
-                onClick={handleSubmit}
+                type="submit"
                 className="w-full h-12 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-xl transition-all duration-300 gap-2"
               >
                 <Send className="w-4 h-4" />

@@ -3,6 +3,7 @@ import { Phone, X, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useNavigate } from "react-router-dom";
+import logo from "@/assets/image_2026-03-06_18-30-36 1.png";
 
 const WEBHOOK_URL = "https://hook.eu1.make.com/nz434sx17u2q5mxet3ofqg8y7pzxm1ht";
 
@@ -49,15 +50,18 @@ const Header = () => {
     <>
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border tg-header">
         <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-          <div>
-            <span className="font-extrabold text-xl text-foreground tracking-tight">META MONSTER</span>
-            <p className="text-xs text-muted-foreground">Агенція Meta таргета</p>
+          <div className="flex items-center gap-2 sm:gap-3">
+            <img src={logo} alt="Meta Monster" className="h-7 w-auto sm:h-8 md:h-10 object-contain" />
+            <div className="leading-tight">
+              <span className="font-extrabold text-base sm:text-lg md:text-xl text-foreground tracking-tight">META MONSTER</span>
+              <p className="text-[11px] sm:text-xs text-muted-foreground">Агенція Meta таргета</p>
+            </div>
           </div>
 
           <Button
             id="cta_header_callback"
             size="sm"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-xs sm:text-sm px-3 sm:px-4"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-xs sm:text-sm px-3 sm:px-4 py-2 sm:py-2.5 whitespace-nowrap"
             onClick={() => { const w = window as any; w.dataLayer = w.dataLayer || []; w.dataLayer.push({ event: "form_open", source: "header_callback", form_id: "form_header_callback" }); setCallbackOpen(true); }}
           >
             <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
