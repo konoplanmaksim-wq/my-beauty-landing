@@ -139,6 +139,8 @@
     z-index: 9999;
     pointer-events: none;
   }
+  .tg-inapp .tg-header { padding-top: 96px; }
+  .tg-inapp main { margin-top: 96px; }
 }
 
 @keyframes pulse-slow {
