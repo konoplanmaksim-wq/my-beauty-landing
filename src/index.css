@@ -128,6 +128,17 @@
       pointer-events: none;
     }
   }
+  .tg-inapp::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 72px;
+    background: hsl(var(--background));
+    z-index: 9999;
+    pointer-events: none;
+  }
 }
 
 @keyframes pulse-slow {

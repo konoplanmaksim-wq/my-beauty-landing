@@ -21,6 +21,9 @@ import "./index.css";
 
 
 (() => {
+  if (/Telegram/i.test(navigator.userAgent)) {
+    document.body.classList.add("tg-inapp");
+  }
   const fired: Record<number, boolean> = { 25: false, 50: false, 75: false, 100: false };
   const onScroll = () => {
     const doc = document.documentElement;
