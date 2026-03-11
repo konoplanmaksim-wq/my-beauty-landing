@@ -61,18 +61,18 @@ const FloatingWidgets = ({ isOpen, onOpenChange }: { isOpen?: boolean; onOpenCha
           ref={btnRef}
           id="btn_callback_widget"
           onClick={() => { (window as any).__pushDL?.("form_open", { source: "callback_widget", form_id: "form_callback_widget" }); setIsCallbackOpen(true); }}
-          className="relative w-14 h-14 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(220,38,38,0.5)] transition-all duration-300 hover:scale-110 overflow-visible bg-red-600 text-white"
+          className="relative w-14 h-14 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(177,30,30,0.5)] transition-all duration-300 hover:scale-110 overflow-visible bg-[#b11e1e] text-white"
         >
           <span
-            className="absolute inset-0 rounded-full border-2 border-red-600 opacity-75 animate-ping"
+            className="absolute inset-0 rounded-full border-2 border-[#b11e1e] opacity-75 animate-ping"
             style={{ animationDuration: "2s" }}
           />
           <span
-            className="absolute inset-0 rounded-full border-2 border-red-600 opacity-50 animate-ping"
+            className="absolute inset-0 rounded-full border-2 border-[#b11e1e] opacity-50 animate-ping"
             style={{ animationDelay: "0.6s", animationDuration: "2s" }}
           />
           <span
-            className="absolute inset-0 rounded-full border-2 border-red-600 opacity-25 animate-ping"
+            className="absolute inset-0 rounded-full border-2 border-[#b11e1e] opacity-25 animate-ping"
             style={{ animationDelay: "1.2s", animationDuration: "2s" }}
           />
           <Phone className="w-7 h-7 relative z-10" />

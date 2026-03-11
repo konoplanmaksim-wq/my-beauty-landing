@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useNavigate } from "react-router-dom";
 
+import logo from "@/assets/image_2026-03-06_18-30-36 1.png";
+
 const WEBHOOK_URL = "https://hook.eu1.make.com/nz434sx17u2q5mxet3ofqg8y7pzxm1ht";
 
 const Footer = () => {
@@ -49,13 +51,16 @@ const Footer = () => {
       <footer className="bg-foreground text-background py-12">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
-            <div>
-              <span className="font-extrabold text-xl tracking-tight">TARGET GROUP</span>
-              <p className="text-background/60 text-xs">Агенція Meta таргета</p>
+            <div className="flex items-center gap-3">
+              <img src={logo} alt="Meta Monster" className="h-10 w-auto object-contain brightness-0 invert" />
+              <div>
+                <span className="font-extrabold text-xl tracking-tight text-white">META MONSTER</span>
+                <p className="text-white/60 text-xs leading-none mt-1">Агенція Meta таргета</p>
+              </div>
             </div>
             <Button
               onClick={() => setCallbackOpen(true)}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-xl h-11 px-6 transition-all duration-300"
+              className="bg-[#b11e1e] hover:bg-[#9b1a1a] text-white font-semibold rounded-xl h-11 px-6 transition-all duration-300"
             >
               Зателефонуйте мені
             </Button>
@@ -91,7 +96,7 @@ const Footer = () => {
 
           <div className="border-t border-background/20 pt-8 text-center">
             <p className="text-sm text-background/50">
-              © 2024 TARGET GROUP. Усі права захищені.
+              © 2024 META MONSTER. Усі права захищені.
             </p>
           </div>
         </div>

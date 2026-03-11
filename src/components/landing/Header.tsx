@@ -49,22 +49,22 @@ const Header = () => {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border tg-header">
-        <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-          <div className="flex items-center gap-2 sm:gap-3">
-            <img src={logo} alt="Meta Monster" className="h-7 w-auto sm:h-8 md:h-10 object-contain" />
-            <div className="leading-tight">
-              <span className="font-extrabold text-base sm:text-lg md:text-xl text-foreground tracking-tight">META MONSTER</span>
-              <p className="text-[11px] sm:text-xs text-muted-foreground">Агенція Meta таргета</p>
+        <div className="container mx-auto px-4 py-2 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <img src={logo} alt="Meta Monster" className="h-10 md:h-12 w-auto object-contain" />
+            <div className="flex flex-col">
+              <span className="font-extrabold text-lg md:text-xl text-foreground tracking-tighter leading-tight">META MONSTER</span>
+              <span className="text-xs md:text-sm text-muted-foreground">Агенція Meta таргета</span>
             </div>
           </div>
 
           <Button
             id="cta_header_callback"
             size="sm"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-xs sm:text-sm px-3 sm:px-4 py-2 sm:py-2.5 whitespace-nowrap"
+            className="bg-[#b11e1e] hover:bg-[#9b1a1a] text-white font-semibold text-xs md:text-sm px-3 py-1.5 md:px-4 md:py-2 rounded-lg md:rounded-xl whitespace-nowrap"
             onClick={() => { const w = window as any; w.dataLayer = w.dataLayer || []; w.dataLayer.push({ event: "form_open", source: "header_callback", form_id: "form_header_callback" }); setCallbackOpen(true); }}
           >
-            <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
+            <Phone className="w-4 h-4 mr-1.5" />
             Передзвоніть мені
           </Button>
         </div>
